@@ -30,7 +30,7 @@ $(document).ready(function() {
   $("#selectall").bind("click", function(event) {
     event.preventDefault();
     st($("div code").get(0));
-  });  
+  });
   $("button.add.group").bind("click", function(event) {
     event.preventDefault();
     var d = $(this).parent().find(".tag-group:first").clone();
@@ -42,7 +42,7 @@ $(document).ready(function() {
     $("<button/>", {"class":"delete group", type:"button", text:"-"}).appendTo($(d).find(".tag:first"));
     d.appendTo($(this).parent());
   });
-  
+
   $("div.section").on("mouseenter mouseleave focusin focusout", "button.delete.group, button.delete.single-tag", function(event){
      event.preventDefault();
      $(this).parent().toggleClass("remove-highlight");
@@ -110,22 +110,22 @@ function process(section){
     var isWrapper = $(section).hasClass("wrapper-tag");
     var indent = 0;
     var xml = "";
-        
+
     if (isWrapper){
         indent = 1;
     }
-    
+
     $(section).find(".tag-group>.tag").each(function(){
         xml += processTag(this,indent);
     });
-    
+
     if (xml.length > 0){
         if (isWrapper){
             var wrapperName = name(section);
             xml = ot(wrapperName) + br() + xml + ct(wrapperName) + br();
         }
-    }   
-    
+    }
+
     return xml;
 }
 
@@ -135,9 +135,9 @@ function processTag(tag, indent){
     var value;
     var tagName = name(tag);
     var attr = attribs(tag);
-    
+
     var tagValues = $(tag).children(".tag-value");
-    
+
     if ($(tagValues).length){
         value = inputValue(tagValues[0]);
     }
@@ -145,32 +145,32 @@ function processTag(tag, indent){
     $(tag).children(".tag").each(function(){
         xml += processTag(this,indent + 1);
     });
-    
+
     if (xml.length > 0){
         xml = tab(indent) + ota(tagName,attr) + br() + xml + tab(indent) + ct(tagName) + br();
     }
     else if(typeof value !== "undefined" && (value.length > 0 || ($(tag).hasClass("allow-empty") && attr.length > 0))){
         xml = tab(indent) + ota(tagName,attr) + value + ct(tagName) + br();
     }
-    
+
     return xml;
 }
 
 function attribs(element){
     var attribs = "";
-    
+
     $(element).children(".tag-attribute").each(function(){
         var value = "";
         var n = name(this);
-        
+
         if ( $(this).is("input") ){
             value = inputValue(this);
         }
-        
+
         if ( $(this).is("select") ){
             value = selectValue(this);
         }
-        
+
         if (value.length > 0){
             if (attribs.length > 0){
                 attribs += " ";
@@ -178,7 +178,7 @@ function attribs(element){
             attribs += n + "=\"" + value +"\"";
         }
     });
-    
+
     return attribs;
 }
 

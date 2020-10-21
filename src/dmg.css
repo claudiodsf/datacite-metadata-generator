@@ -31,7 +31,7 @@ select.half-width {
     width: 80%
 }
 .left {
-    float: left;    
+    float: left;
 }
 .right {
     float: right;
@@ -47,7 +47,7 @@ div.form {
 }
 div.form div {
     width: 100%;
-    display: inline;    
+    display: inline;
 }
 div.tag {
     margin-bottom: 4px;
@@ -147,11 +147,10 @@ div.left h3 {
 .remove-highlight select {
     border-color: rgb(239, 6, 6);
     border-style: solid;
-    border-width: 1px;    
+    border-width: 1px;
     border-radius: 5px;
-    -webkit-transition:all 0.1s linear 0s, border-color 0s;    
+    -webkit-transition:all 0.1s linear 0s, border-color 0s;
     transition: all 0.1s linear 0s, border-color 0s;
-    
 }
 h3.recommended:hover,
 h3.other:hover,
