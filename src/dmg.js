@@ -136,6 +136,7 @@ optionValues["titleType"] = [
 optionValues["funderIdentifierType"] = [
   "Crossref Funder ID", "GRID", "ISNI", "Other"
 ];
+optionValues["nameType"] = ["Personal", "Organizational"];
 
 function process(section){
     var isWrapper = $(section).hasClass("wrapper-tag");
