@@ -5,14 +5,14 @@ $(document).ready(function() {
   var kernelSchemaLocation = kernelNamespace + " " + kernelSchema;
   var header = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + br() + "<resource xmlns=\"" + kernelNamespace + "\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"" + kernelSchemaLocation + "\">" + br();
   $("select[title]").each(function(){
-	 var tagName = name($(this));
-	 ps($(this),optionValues[tagName]);
+     var tagName = name($(this));
+     ps($(this),optionValues[tagName]);
   });
   $("body").on("keyup", "input", function(event) {
     event.preventDefault();
     var xml = header;
     $("div.section").each(function(){
-    	xml += process($(this));
+        xml += process($(this));
     });
     xml += ct("resource");
     metadata = xml;
@@ -44,8 +44,8 @@ $(document).ready(function() {
   });
   
   $("div.section").on("mouseenter mouseleave focusin focusout", "button.delete.group, button.delete.single-tag", function(event){
-	 event.preventDefault();
-	 $(this).parent().toggleClass("remove-highlight");
+     event.preventDefault();
+     $(this).parent().toggleClass("remove-highlight");
   });
   $("div.section").on("click", "button.delete.group", function(event) {
     event.preventDefault();
@@ -107,91 +107,91 @@ optionValues["titleType"] = ["AlternativeTitle", "Subtitle", "TranslatedTitle", 
 optionValues["funderIdentifierType"] = ["Crossref Funder ID", "GRID", "ISNI", "Other"];
 
 function process(section){
-	var isWrapper = $(section).hasClass("wrapper-tag");
-	var indent = 0;
-	var xml = "";
-		
-	if (isWrapper){
-		indent = 1;
-	}
-	
-	$(section).find(".tag-group>.tag").each(function(){
-		xml += processTag(this,indent);
-	});
-	
-	if (xml.length > 0){
-		if (isWrapper){
-			var wrapperName = name(section);
-			xml = ot(wrapperName) + br() + xml + ct(wrapperName) + br();
-		}
-	}	
-	
-	return xml;
+    var isWrapper = $(section).hasClass("wrapper-tag");
+    var indent = 0;
+    var xml = "";
+        
+    if (isWrapper){
+        indent = 1;
+    }
+    
+    $(section).find(".tag-group>.tag").each(function(){
+        xml += processTag(this,indent);
+    });
+    
+    if (xml.length > 0){
+        if (isWrapper){
+            var wrapperName = name(section);
+            xml = ot(wrapperName) + br() + xml + ct(wrapperName) + br();
+        }
+    }   
+    
+    return xml;
 }
 
 function processTag(tag, indent){
-	var xml = "";
-	var attributes;
-	var value;
-	var tagName = name(tag);
-	var attr = attribs(tag);
-	
-	var tagValues = $(tag).children(".tag-value");
-	
-	if ($(tagValues).length){
-		value = inputValue(tagValues[0]);
-	}
+    var xml = "";
+    var attributes;
+    var value;
+    var tagName = name(tag);
+    var attr = attribs(tag);
+    
+    var tagValues = $(tag).children(".tag-value");
+    
+    if ($(tagValues).length){
+        value = inputValue(tagValues[0]);
+    }
 
-	$(tag).children(".tag").each(function(){
-		xml += processTag(this,indent + 1);
-	});
-	
-	if (xml.length > 0){
-		xml = tab(indent) + ota(tagName,attr) + br() + xml + tab(indent) + ct(tagName) + br();
-	}
-	else if(typeof value !== "undefined" && (value.length > 0 || ($(tag).hasClass("allow-empty") && attr.length > 0))){
-		xml = tab(indent) + ota(tagName,attr) + value + ct(tagName) + br();
-	}
-	
-	return xml;
+    $(tag).children(".tag").each(function(){
+        xml += processTag(this,indent + 1);
+    });
+    
+    if (xml.length > 0){
+        xml = tab(indent) + ota(tagName,attr) + br() + xml + tab(indent) + ct(tagName) + br();
+    }
+    else if(typeof value !== "undefined" && (value.length > 0 || ($(tag).hasClass("allow-empty") && attr.length > 0))){
+        xml = tab(indent) + ota(tagName,attr) + value + ct(tagName) + br();
+    }
+    
+    return xml;
 }
 
 function attribs(element){
-	var attribs = "";
-	
-	$(element).children(".tag-attribute").each(function(){
-		var value = "";
-		var n = name(this);
-		
-		if ( $(this).is("input") ){
-			value = inputValue(this);
-		}
-		
-		if ( $(this).is("select") ){
-			value = selectValue(this);
-		}
-		
-		if (value.length > 0){
-			if (attribs.length > 0){
-				attribs += " ";
-			}
-			attribs += n + "=\"" + value +"\"";
-		}
-	});
-	
-	return attribs;
+    var attribs = "";
+    
+    $(element).children(".tag-attribute").each(function(){
+        var value = "";
+        var n = name(this);
+        
+        if ( $(this).is("input") ){
+            value = inputValue(this);
+        }
+        
+        if ( $(this).is("select") ){
+            value = selectValue(this);
+        }
+        
+        if (value.length > 0){
+            if (attribs.length > 0){
+                attribs += " ";
+            }
+            attribs += n + "=\"" + value +"\"";
+        }
+    });
+    
+    return attribs;
 }
 
 function inputValue(input){
-	return $(input).val().encodeXML();
+    return $(input).val().encodeXML();
 }
 
 function selectValue(select){
-	return $(select).find("option").filter(":selected").val().encodeXML();
+    return $(select).find("option").filter(":selected").val().encodeXML();
 }
 
 function name(tag){
-	return $(tag).attr("title");
+    return $(tag).attr("title");
 }
 
 function ps(s, sarr) {
@@ -211,25 +211,25 @@ function br() {
 }
 
 function tab(number){
-	var tabs = "";
-	if (typeof number !== "undefined"){
-		for (var i = 1; i <= number; i++ ){
-			tabs += "\t";
-		}
-	}
-	else{
-		tabs = "\t";
-	}
-	return tabs;
+    var tabs = "";
+    if (typeof number !== "undefined"){
+        for (var i = 1; i <= number; i++ ){
+            tabs += "\t";
+        }
+    }
+    else{
+        tabs = "\t";
+    }
+    return tabs;
 }
 
 function ota(tag,attr) {
-	if (attr.length > 0){
-		return "<" + tag +" "+ attr + ">";
-	}
-	else{
-		return ot(tag);
-	}
+    if (attr.length > 0){
+        return "<" + tag +" "+ attr + ">";
+    }
+    else{
+        return ot(tag);
+    }
 }
 
 function ot(tag) {

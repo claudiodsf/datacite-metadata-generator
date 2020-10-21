@@ -14,16 +14,16 @@ body {
     width: 79%
 }
 .full-width {
-	width: 89%;
+    width: 89%;
 }
 input.half-width {
-	width: 43%;
+    width: 43%;
 }
 input.half-width-smaller {
-	width: 41%;
+    width: 41%;
 }
 select.half-width {
-	width: 45%;
+    width: 45%;
 }
 .tag-group-label {
     float: left;
@@ -31,10 +31,10 @@ select.half-width {
     width: 80%
 }
 .left {
-	float: left;	
+    float: left;    
 }
 .right {
-	float: right;
+    float: right;
 }
 div.left {
     width: 38%
@@ -50,11 +50,11 @@ div.form div {
     display: inline;    
 }
 div.tag {
-	margin-bottom: 4px;
+    margin-bottom: 4px;
 }
 div.tag-group input:nth-last-of-type(1),
 div.tag-group select:nth-last-of-type(1) {
-	margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 input,
 select {
