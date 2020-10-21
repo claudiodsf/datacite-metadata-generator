@@ -97,14 +97,45 @@ $(document).ready(function() {
 });
 
 var optionValues = {};
-optionValues["descriptionType"] = ["Abstract", "Methods", "SeriesInformation", "TableOfContents", "TechnicalInfo", "Other"];
-optionValues["relatedIdentifierType"] = ["ARK", "arXiv", "bibcode", "DOI", "EAN13", "EISSN", "Handle", "IGSN", "ISBN", "ISSN", "ISTC", "LISSN", "LSID", "PMID", "PURL", "UPC", "URL", "URN"];
-optionValues["relationType"] = ["IsCitedBy", "Cites", "IsSupplementTo", "IsSupplementedBy", "IsContinuedBy", "Continues", "HasMetadata", "IsMetadataFor","IsNewVersionOf", "IsPreviousVersionOf", "IsPartOf", "HasPart", "IsReferencedBy", "References", "IsDocumentedBy", "Documents", "IsCompiledBy", "Compiles", "IsVariantFormOf", "IsOriginalFormOf", "IsIdenticalTo", "IsReviewedBy", "Reviews", "IsDerivedFrom", "IsSourceOf"];
-optionValues["resourceTypeGeneral"] = ["Audiovisual", "Collection", "DataPaper", "Dataset", "Event", "Image", "InteractiveResource", "Model", "PhysicalObject", "Service", "Software", "Sound", "Text", "Workflow", "Other"];
-optionValues["dateType"] = ["Accepted", "Available", "Copyrighted", "Collected", "Created", "Issued", "Submitted", "Updated", "Valid", "Other"];
-optionValues["contributorType"] = ["ContactPerson", "DataCollector", "DataCurator", "DataManager", "Distributor", "Editor", "HostingInstitution", "Producer", "ProjectLeader", "ProjectManager", "ProjectMember", "RegistrationAgency", "RegistrationAuthority", "RelatedPerson", "Researcher", "ResearchGroup", "RightsHolder", "Sponsor", "Supervisor", "WorkPackageLeader", "Other"];
-optionValues["titleType"] = ["AlternativeTitle", "Subtitle", "TranslatedTitle", "Other"];
-optionValues["funderIdentifierType"] = ["Crossref Funder ID", "GRID", "ISNI", "Other"];
+optionValues["descriptionType"] = [
+  "Abstract", "Methods", "SeriesInformation", "TableOfContents",
+  "TechnicalInfo", "Other"
+];
+optionValues["relatedIdentifierType"] = [
+  "ARK", "arXiv", "bibcode", "DOI", "EAN13", "EISSN", "Handle", "IGSN", "ISBN",
+  "ISSN", "ISTC", "LISSN", "LSID", "PMID", "PURL", "UPC", "URL", "URN"
+];
+optionValues["relationType"] = [
+  "IsCitedBy", "Cites", "IsSupplementTo", "IsSupplementedBy",
+  "IsContinuedBy", "Continues", "IsDescribedBy", "Describes",
+  "HasMetadata", "IsMetadataFor", "HasVersion", "IsVersionOf",
+  "IsNewVersionOf", "IsPreviousVersionOf", "IsPartOf", "HasPart",
+  "IsReferencedBy", "References", "IsDocumentedBy", "Documents",
+  "IsCompiledBy", "Compiles", "IsVariantFormOf", "IsOriginalFormOf",
+  "IsIdenticalTo", "IsReviewedBy", "Reviews", "IsDerivedFrom", "IsSourceOf",
+  "IsRequiredBy", "Requires"
+];
+optionValues["resourceTypeGeneral"] = [
+  "Audiovisual", "Collection", "DataPaper", "Dataset", "Event", "Image",
+  "InteractiveResource", "Model", "PhysicalObject", "Service", "Software",
+  "Sound", "Text", "Workflow", "Other"
+];
+optionValues["dateType"] = [
+  "Accepted", "Available", "Copyrighted", "Collected", "Created", "Issued",
+  "Submitted", "Updated", "Valid", "Other"];
+optionValues["contributorType"] = [
+  "ContactPerson", "DataCollector", "DataCurator", "DataManager",
+  "Distributor", "Editor", "HostingInstitution", "Producer", "ProjectLeader",
+  "ProjectManager", "ProjectMember", "RegistrationAgency",
+  "RegistrationAuthority", "RelatedPerson", "Researcher", "ResearchGroup",
+  "RightsHolder", "Sponsor", "Supervisor", "WorkPackageLeader", "Other"
+];
+optionValues["titleType"] = [
+  "AlternativeTitle", "Subtitle", "TranslatedTitle", "Other"
+];
+optionValues["funderIdentifierType"] = [
+  "Crossref Funder ID", "GRID", "ISNI", "Other"
+];
 
 function process(section){
     var isWrapper = $(section).hasClass("wrapper-tag");
