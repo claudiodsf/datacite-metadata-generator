@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var kernelVersion = "4.0";
+  var kernelVersion = "4.1";
   var kernelNamespace = "http://datacite.org/schema/kernel-4";
   var kernelSchema = "http://schema.datacite.org/meta/kernel-4/metadata.xsd";
   var kernelSchemaLocation = kernelNamespace + " " + kernelSchema;
