@@ -134,7 +134,7 @@ optionValues["titleType"] = [
   "AlternativeTitle", "Subtitle", "TranslatedTitle", "Other"
 ];
 optionValues["funderIdentifierType"] = [
-  "Crossref Funder ID", "GRID", "ISNI", "Other"
+  "Crossref Funder ID", "GRID", "ISNI", "ROR", "Other"
 ];
 optionValues["nameType"] = ["Personal", "Organizational"];
 
