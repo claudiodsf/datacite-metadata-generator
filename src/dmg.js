@@ -103,7 +103,7 @@ optionValues["descriptionType"] = [
 ];
 optionValues["relatedIdentifierType"] = [
   "ARK", "arXiv", "bibcode", "DOI", "EAN13", "EISSN", "Handle", "IGSN", "ISBN",
-  "ISSN", "ISTC", "LISSN", "LSID", "PMID", "PURL", "UPC", "URL", "URN"
+  "ISSN", "ISTC", "LISSN", "LSID", "PMID", "PURL", "UPC", "URL", "URN", "w3id"
 ];
 optionValues["relationType"] = [
   "IsCitedBy", "Cites", "IsSupplementTo", "IsSupplementedBy",
