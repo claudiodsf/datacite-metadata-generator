@@ -113,7 +113,7 @@ optionValues["relationType"] = [
   "IsReferencedBy", "References", "IsDocumentedBy", "Documents",
   "IsCompiledBy", "Compiles", "IsVariantFormOf", "IsOriginalFormOf",
   "IsIdenticalTo", "IsReviewedBy", "Reviews", "IsDerivedFrom", "IsSourceOf",
-  "IsRequiredBy", "Requires"
+  "IsRequiredBy", "Requires", "IsObsoletedBy", "Obsoletes"
 ];
 optionValues["resourceTypeGeneral"] = [
   "Audiovisual", "Collection", "DataPaper", "Dataset", "Event", "Image",
