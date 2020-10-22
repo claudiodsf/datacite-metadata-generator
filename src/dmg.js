@@ -122,7 +122,7 @@ optionValues["resourceTypeGeneral"] = [
 ];
 optionValues["dateType"] = [
   "Accepted", "Available", "Copyrighted", "Collected", "Created", "Issued",
-  "Submitted", "Updated", "Valid", "Other"];
+  "Submitted", "Updated", "Valid", "Withdrawn", "Other"];
 optionValues["contributorType"] = [
   "ContactPerson", "DataCollector", "DataCurator", "DataManager",
   "Distributor", "Editor", "HostingInstitution", "Producer", "ProjectLeader",
