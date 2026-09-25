@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Not valid against the schema on purpose: values that are not in the
+     controlled lists, an unknown element, unknown attributes. The loader must
+     use everything it understands, ignore the rest and report it. -->
+<resource xmlns="http://datacite.org/schema/kernel-4" bogusAttribute="yes">
+  <identifier identifierType="DOI">10.1234/sloppy</identifier>
+  <titles>
+    <title>Main title</title>
+    <title titleType="Subtitle">A subtitle</title>
+    <title titleType="NotATitleType">Bad title type</title>
+  </titles>
+  <creators>
+    <creator>
+      <creatorName>Doe, John</creatorName>
+    </creator>
+    <creator>
+      <creatorName nameType="Personal">Roe, Jane</creatorName>
+      <givenName>Jane</givenName>
+      <familyName>Roe</familyName>
+    </creator>
+  </creators>
+  <publisher publisherIdentifier="https://ror.org/01rv9gx86" publisherIdentifierScheme="ROR">Publisher</publisher>
+  <publicationYear>2026</publicationYear>
+  <resourceType resourceTypeGeneral="Foo">Unknown general type</resourceType>
+  <unknownElement>ignore me</unknownElement>
+  <subjects>
+    <subject subjectScheme="FOS" classificationCode="https://example.org/x" unknownAttr="1">Physics</subject>
+  </subjects>
+  <relatedItems>
+    <relatedItem relatedItemType="JournalArticle" relationType="IsPublishedIn">
+      <titles>
+        <title>Journal</title>
+      </titles>
+      <number numberType="Bogus">42</number>
+    </relatedItem>
+  </relatedItems>
+  <language>en</language>
+</resource>

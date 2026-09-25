@@ -1,0 +1,13 @@
+{
+  "name": "datacite-metadata-generator-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DOM tests for the DataCite metadata generator (jsdom, no browser)",
+  "scripts": {
+    "test": "node test_dom.js"
+  },
+  "devDependencies": {
+    "jquery": "3.1.1",
+    "jsdom": "^26.1.0"
+  }
+}

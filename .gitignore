@@ -4,3 +4,7 @@
 /datacite_metadata_generator_source.html
 /code.js
 /test.xml
+
+# test suite: installed dev dependencies, cached schema and generated documents
+/test/node_modules/
+/test/.cache/

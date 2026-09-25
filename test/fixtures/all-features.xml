@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Every property the form supports, with a value, and nothing else.
+     Used to check that reading a document and writing it back is lossless.
+     The root element carries the same namespace declarations the generator
+     writes, so a round trip can be compared attribute by attribute. -->
+<resource xmlns="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
+  <identifier identifierType="DOI">10.1234/all-features</identifier>
+  <creators>
+    <creator>
+      <creatorName nameType="Personal">Doe, John</creatorName>
+      <givenName>John</givenName>
+      <familyName>Doe</familyName>
+      <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org">0000-0002-1825-0097</nameIdentifier>
+      <affiliation affiliationIdentifier="https://ror.org/01rv9gx86" affiliationIdentifierScheme="ROR" schemeURI="https://ror.org">Example Org</affiliation>
+    </creator>
+  </creators>
+  <titles>
+    <title>Main title</title>
+    <title titleType="Subtitle">A subtitle</title>
+  </titles>
+  <publisher publisherIdentifier="https://ror.org/01rv9gx86" publisherIdentifierScheme="ROR" schemeURI="https://ror.org">Example Publisher</publisher>
+  <publicationYear>2026</publicationYear>
+  <resourceType resourceTypeGeneral="Dataset">Dataset</resourceType>
+  <subjects>
+    <subject subjectScheme="FOS" schemeURI="https://example.org/fos" valueURI="https://example.org/fos/1" classificationCode="https://example.org/cc/1">Physics</subject>
+  </subjects>
+  <contributors>
+    <contributor contributorType="Translator">
+      <contributorName nameType="Personal">Roe, Jane</contributorName>
+      <givenName>Jane</givenName>
+      <familyName>Roe</familyName>
+      <affiliation affiliationIdentifier="https://ror.org/01rv9gx86" affiliationIdentifierScheme="ROR" schemeURI="https://ror.org">Example Org</affiliation>
+    </contributor>
+  </contributors>
+  <dates>
+    <date dateType="Coverage" dateInformation="range">2026-01-01/2026-12-31</date>
+    <date dateType="Issued">2026-01-01</date>
+  </dates>
+  <language>en</language>
+  <alternateIdentifiers>
+    <alternateIdentifier alternateIdentifierType="Local">123</alternateIdentifier>
+  </alternateIdentifiers>
+  <relatedIdentifiers>
+    <relatedIdentifier relatedIdentifierType="SWHID" relationType="Other" resourceTypeGeneral="Software" relatedMetadataScheme="X" schemeURI="https://example.org/s" schemeType="XSD" relationTypeInformation="custom relation">swh:1:cnt:94a9ed024d3859793618152ea559a168bbcbb5e2</relatedIdentifier>
+  </relatedIdentifiers>
+  <sizes>
+    <size>1 MB</size>
+  </sizes>
+  <formats>
+    <format>text/plain</format>
+  </formats>
+  <version>1</version>
+  <rightsList>
+    <rights rightsURI="https://creativecommons.org/licenses/by/4.0/" rightsIdentifier="CC-BY-4.0" rightsIdentifierScheme="SPDX" schemeURI="https://spdx.org/licenses/">CC BY 4.0</rights>
+  </rightsList>
+  <descriptions>
+    <description descriptionType="Abstract">An abstract</description>
+  </descriptions>
+  <geoLocations>
+    <geoLocation>
+      <geoLocationPlace>Somewhere</geoLocationPlace>
+      <geoLocationPoint>
+        <pointLongitude>-52.0</pointLongitude>
+        <pointLatitude>69.0</pointLatitude>
+      </geoLocationPoint>
+      <geoLocationBox>
+        <westBoundLongitude>-123.27</westBoundLongitude>
+        <eastBoundLongitude>-123.02</eastBoundLongitude>
+        <southBoundLatitude>49.195</southBoundLatitude>
+        <northBoundLatitude>49.315</northBoundLatitude>
+      </geoLocationBox>
+      <geoLocationPolygon>
+        <polygonPoint>
+          <pointLongitude>-52</pointLongitude>
+          <pointLatitude>69</pointLatitude>
+        </polygonPoint>
+        <polygonPoint>
+          <pointLongitude>-52</pointLongitude>
+          <pointLatitude>67</pointLatitude>
+        </polygonPoint>
+        <polygonPoint>
+          <pointLongitude>-54</pointLongitude>
+          <pointLatitude>67</pointLatitude>
+        </polygonPoint>
+        <polygonPoint>
+          <pointLongitude>-54</pointLongitude>
+          <pointLatitude>69</pointLatitude>
+        </polygonPoint>
+        <inPolygonPoint>
+          <pointLongitude>-53</pointLongitude>
+          <pointLatitude>68</pointLatitude>
+        </inPolygonPoint>
+      </geoLocationPolygon>
+    </geoLocation>
+  </geoLocations>
+  <fundingReferences>
+    <fundingReference>
+      <funderName>Example Funder</funderName>
+      <funderIdentifier funderIdentifierType="ROR" schemeURI="https://ror.org">https://ror.org/01rv9gx86</funderIdentifier>
+      <awardNumber awardURI="https://example.org/award">A-1</awardNumber>
+      <awardTitle>Award title</awardTitle>
+    </fundingReference>
+  </fundingReferences>
+  <relatedItems>
+    <relatedItem relatedItemType="JournalArticle" relationType="IsPublishedIn" relationTypeInformation="Series info">
+      <relatedItemIdentifier relatedItemIdentifierType="ISSN" relatedMetadataScheme="X" schemeURI="https://example.org/s" schemeType="XSD">1234-5678</relatedItemIdentifier>
+      <creators>
+        <creator>
+          <creatorName nameType="Personal">Smith, Ann</creatorName>
+          <givenName>Ann</givenName>
+          <familyName>Smith</familyName>
+        </creator>
+      </creators>
+      <titles>
+        <title>Journal of Testing</title>
+        <title titleType="TranslatedTitle">Giornale</title>
+      </titles>
+      <publicationYear>1990</publicationYear>
+      <volume>1</volume>
+      <issue>2</issue>
+      <number numberType="Article">3</number>
+      <firstPage>1</firstPage>
+      <lastPage>9</lastPage>
+      <publisher>Related Publisher</publisher>
+      <edition>2</edition>
+      <contributors>
+        <contributor contributorType="Editor">
+          <contributorName nameType="Personal">Brown, Bob</contributorName>
+          <givenName>Bob</givenName>
+          <familyName>Brown</familyName>
+        </contributor>
+      </contributors>
+    </relatedItem>
+  </relatedItems>
+</resource>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Known limitation: <description> allows a <br/> child element (mixed
+     content), but the form has no way to represent it, because its fields are
+     single line inputs. Such a document loads, the <br/> is reported as an
+     unrecognised value and the surrounding text is joined without a separator.
+     Records that encode line breaks as escaped text (&lt;br&gt;, as most
+     harvested records do) round trip exactly - see real-world.xml. -->
+<resource xmlns="http://datacite.org/schema/kernel-4">
+  <identifier identifierType="DOI">10.1234/description-br</identifier>
+  <creators>
+    <creator>
+      <creatorName>Doe, John</creatorName>
+    </creator>
+  </creators>
+  <titles>
+    <title>Title</title>
+  </titles>
+  <publisher>Example Publisher</publisher>
+  <publicationYear>2026</publicationYear>
+  <resourceType resourceTypeGeneral="Dataset">Dataset</resourceType>
+  <descriptions>
+    <description descriptionType="Abstract">first line<br/>second line</description>
+  </descriptions>
+</resource>

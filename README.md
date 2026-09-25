@@ -39,3 +39,15 @@ To Do:
 - XML and schema validation options.
 - Try to integrate schema documentation to add context to input fields.
 
+Tests:
+======
+Regression tests live in `test/`:
+
+    python3 test/run_tests.py
+
+They check the controlled lists against the official DataCite schema, keep the inlined copy
+of the script in step with `src/dmg.js`, and run the page in jsdom to exercise the generator
+and the XML loader, including a read-load-save round trip over the fixtures in
+`test/fixtures/`. See `test/README.md` for the details and for the (optional) dependencies.
+None of this is needed to use the form: it is still a single file with no dependencies.
+

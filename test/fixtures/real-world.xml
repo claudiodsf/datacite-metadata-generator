@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Deliberately "messy" but schema valid, modelled on real records harvested
+     from DataCite: apostrophes, escaped line breaks in the description,
+     multi-line and space padded text, xml:lang, an empty <version/> element. -->
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://datacite.org/schema/kernel-4" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
+  <identifier identifierType="DOI">10.1234/real-world</identifier>
+  <creators>
+    <creator>
+      <creatorName nameType="Organizational">Institut de l'exemple (IDLE) </creatorName>
+      <affiliation affiliationIdentifier="https://ror.org/004gzqz66" affiliationIdentifierScheme="ROR" schemeURI="https://ror.org/">Institut de l'exemple (IDLE)</affiliation>
+    </creator>
+    <creator>
+      <creatorName nameType="Organizational">École de l'exemple (EDLE)</creatorName>
+      <affiliation affiliationIdentifier="https://ror.org/030qxve40" affiliationIdentifierScheme="ROR" schemeURI="https://ror.org/">École de l'exemple (EDLE)</affiliation>
+    </creator>
+  </creators>
+  <titles>
+    <title>Réseau mondial d'exemple à large bande</title>
+  </titles>
+  <publisher publisherIdentifier="https://ror.org/004gzqz66" publisherIdentifierScheme="ROR" schemeURI="https://ror.org/" xml:lang="fr">Institut de l'exemple, Université Exemple</publisher>
+  <publicationYear>1982</publicationYear>
+  <resourceType resourceTypeGeneral="Other">Seismic Network</resourceType>
+  <subjects>
+    <subject xml:lang="en">FDSN Network Code G</subject>
+  </subjects>
+  <contributors>
+    <contributor contributorType="DataCollector">
+      <contributorName nameType="Organizational">Institut de l'exemple (IDLE)</contributorName>
+      <affiliation affiliationIdentifier="https://ror.org/004gzqz66" affiliationIdentifierScheme="ROR" schemeURI="https://ror.org/">Institut de l'exemple (IDLE)</affiliation>
+    </contributor>
+    <contributor contributorType="DataCurator">
+      <contributorName nameType="Organizational">Centre de données de l'exemple</contributorName>
+      <affiliation affiliationIdentifier="https://re3data.org/repository/r3d100013691" affiliationIdentifierScheme="re3data" schemeURI="https://re3data.org/">Centre de données de l'exemple</affiliation>
+    </contributor>
+    <contributor contributorType="ContactPerson">
+      <contributorName nameType="Personal">Observatoire Exemple, contact@example.org</contributorName>
+      <givenName>contact@example.org</givenName>
+      <familyName>Observatoire Exemple</familyName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName nameType="Organizational">Institut de Recherche d'Exemple (IRD)             </contributorName>
+    </contributor>
+    <contributor contributorType="Sponsor">
+      <contributorName nameType="Organizational">Terres Australes et Antarctiques d'Exemple (TAAF)             </contributorName>
+    </contributor>
+  </contributors>
+  <dates>
+    <date dateType="Issued">1982</date>
+  </dates>
+  <language>en</language>
+  <relatedIdentifiers>
+    <relatedIdentifier relatedIdentifierType="DOI" relationType="IsDocumentedBy">10.1785/gssrl.81.3.427</relatedIdentifier>
+  </relatedIdentifiers>
+  <sizes>
+    <size>about 33 stations and 500MB per day</size>
+  </sizes>
+  <formats>
+    <format>SEED data</format>
+    <format>FDSN stationxml for metadata</format>
+  </formats>
+  <version/>
+  <rightsList>
+    <rights rightsURI="https://creativecommons.org/licenses/by/4.0/legalcode" rightsIdentifier="cc-by-4.0" rightsIdentifierScheme="SPDX" schemeURI="https://spdx.org/licenses/">Creative Commons Attribution 4.0 International</rights>
+  </rightsList>
+  <descriptions>
+    <description xml:lang="en" descriptionType="Abstract">L'exemple (G) est un réseau mondial créé en 1982.
+ &lt;br&gt;Les données sont librement distribuées.
+ &lt;br&gt;Des produits dérivés sont également disponibles.</description>
+  </descriptions>
+  <geoLocations>
+    <geoLocation>
+      <geoLocationPlace>Global Network</geoLocationPlace>
+    </geoLocation>
+  </geoLocations>
+  <fundingReferences>
+    <fundingReference>
+      <funderName>Centre national de la recherche d'exemple (CNDE)</funderName>
+    </fundingReference>
+    <fundingReference>
+      <funderName>
+                Ministère de l'enseignement d'exemple, Institut de l'exemple (IDLE)
+            </funderName>
+    </fundingReference>
+  </fundingReferences>
+</resource>
