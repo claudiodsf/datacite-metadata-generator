@@ -25,6 +25,9 @@ Notes:
 ======
 - Currently the 'save to file' feature does not work in Safari.
 - The form does not perform any XML validation or validation against the DataCite schema.
+- The xml:lang attribute can be set on the properties that allow it: title, creatorName,
+  contributorName, publisher, subject, rights, description and the matching RelatedItem
+  sub-properties.
 - A loaded XML file does not have to be valid against the DataCite schema: everything the
   form understands is used to fill it, while unknown elements and attributes and values
   that are not part of the controlled lists are ignored and reported. Only a file that is

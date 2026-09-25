@@ -224,7 +224,7 @@ function processTag(tag, indent){
     if (xml.length > 0){
         xml = tab(indent) + ota(tagName,attr) + br() + xml + tab(indent) + ct(tagName) + br();
     }
-    else if(typeof value !== "undefined" && (value.length > 0 || ($(tag).hasClass("allow-empty") && attr.length > 0))){
+    else if(typeof value !== "undefined" && (value.length > 0 || ($(tag).hasClass("allow-empty") && attr.length > 0) || $(tag).hasClass("keep-empty"))){
         xml = tab(indent) + ota(tagName,attr) + value + ct(tagName) + br();
     }
 
@@ -418,6 +418,7 @@ function resetForm() {
   });
   $("button.delete.group").remove();
   $(".remove-highlight").removeClass("remove-highlight");
+  $(".keep-empty").removeClass("keep-empty");
   // the fixed value of the hidden inputs (e.g. identifierType) is kept
   $("div.form").find("input.tag-value, input.tag-attribute, select.tag-attribute")
                .not("input[type=hidden]").val("");
@@ -498,7 +499,12 @@ function fillTag(tag, node, report) {
 
   var $values = $tag.children(".tag-value");
   if ($values.length) {
-    $values.first().val(normalizeText(node.textContent));
+    var text = normalizeText(node.textContent);
+    // an element that was present but empty (e.g. <version/>) is kept as an empty element
+    if (!text && !node.children.length) {
+      $tag.addClass("keep-empty");
+    }
+    $values.first().val(text);
   }
 
   var knownAttributes = {};
