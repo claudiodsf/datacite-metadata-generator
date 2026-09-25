@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var kernelVersion = "4.3";
+  var kernelVersion = "4.7";
   var kernelNamespace = "http://datacite.org/schema/kernel-4";
   var kernelSchema = "http://schema.datacite.org/meta/kernel-4/metadata.xsd";
   var kernelSchemaLocation = kernelNamespace + " " + kernelSchema;
@@ -102,33 +102,41 @@ optionValues["descriptionType"] = [
   "TechnicalInfo", "Other"
 ];
 optionValues["relatedIdentifierType"] = [
-  "ARK", "arXiv", "bibcode", "DOI", "EAN13", "EISSN", "Handle", "IGSN", "ISBN",
-  "ISSN", "ISTC", "LISSN", "LSID", "PMID", "PURL", "UPC", "URL", "URN", "w3id"
+  "ARK", "arXiv", "bibcode", "CSTR", "DOI", "EAN13", "EISSN", "Handle", "IGSN",
+  "ISBN", "ISSN", "ISTC", "LISSN", "LSID", "PMID", "PURL", "RAiD", "RRID",
+  "SWHID", "UPC", "URL", "URN", "w3id"
 ];
 optionValues["relationType"] = [
   "IsCitedBy", "Cites", "IsSupplementTo", "IsSupplementedBy",
   "IsContinuedBy", "Continues", "IsDescribedBy", "Describes",
   "HasMetadata", "IsMetadataFor", "HasVersion", "IsVersionOf",
   "IsNewVersionOf", "IsPreviousVersionOf", "IsPartOf", "HasPart",
-  "IsReferencedBy", "References", "IsDocumentedBy", "Documents",
-  "IsCompiledBy", "Compiles", "IsVariantFormOf", "IsOriginalFormOf",
-  "IsIdenticalTo", "IsReviewedBy", "Reviews", "IsDerivedFrom", "IsSourceOf",
-  "IsRequiredBy", "Requires", "IsObsoletedBy", "Obsoletes"
+  "IsPublishedIn", "IsReferencedBy", "References", "IsDocumentedBy",
+  "Documents", "IsCompiledBy", "Compiles", "IsVariantFormOf",
+  "IsOriginalFormOf", "IsIdenticalTo", "IsReviewedBy", "Reviews",
+  "IsDerivedFrom", "IsSourceOf", "IsRequiredBy", "Requires",
+  "IsObsoletedBy", "Obsoletes", "IsCollectedBy", "Collects",
+  "IsTranslationOf", "HasTranslation", "Other"
 ];
 optionValues["resourceTypeGeneral"] = [
-  "Audiovisual", "Collection", "DataPaper", "Dataset", "Event", "Image",
-  "InteractiveResource", "Model", "PhysicalObject", "Service", "Software",
-  "Sound", "Text", "Workflow", "Other"
+  "Audiovisual", "Award", "Book", "BookChapter", "Collection",
+  "ComputationalNotebook", "ConferencePaper", "ConferenceProceeding",
+  "DataPaper", "Dataset", "Dissertation", "Event", "Image", "Instrument",
+  "InteractiveResource", "Journal", "JournalArticle", "Model",
+  "OutputManagementPlan", "PeerReview", "PhysicalObject", "Poster", "Preprint",
+  "Presentation", "Project", "Report", "Service", "Software", "Sound",
+  "Standard", "StudyRegistration", "Text", "Workflow", "Other"
 ];
 optionValues["dateType"] = [
-  "Accepted", "Available", "Copyrighted", "Collected", "Created", "Issued",
-  "Submitted", "Updated", "Valid", "Withdrawn", "Other"];
+  "Accepted", "Available", "Copyrighted", "Collected", "Coverage", "Created",
+  "Issued", "Submitted", "Updated", "Valid", "Withdrawn", "Other"];
 optionValues["contributorType"] = [
   "ContactPerson", "DataCollector", "DataCurator", "DataManager",
   "Distributor", "Editor", "HostingInstitution", "Producer", "ProjectLeader",
   "ProjectManager", "ProjectMember", "RegistrationAgency",
   "RegistrationAuthority", "RelatedPerson", "Researcher", "ResearchGroup",
-  "RightsHolder", "Sponsor", "Supervisor", "WorkPackageLeader", "Other"
+  "RightsHolder", "Sponsor", "Supervisor", "Translator", "WorkPackageLeader",
+  "Other"
 ];
 optionValues["titleType"] = [
   "AlternativeTitle", "Subtitle", "TranslatedTitle", "Other"
@@ -137,6 +145,10 @@ optionValues["funderIdentifierType"] = [
   "Crossref Funder ID", "GRID", "ISNI", "ROR", "Other"
 ];
 optionValues["nameType"] = ["Personal", "Organizational"];
+optionValues["numberType"] = ["Article", "Chapter", "Report", "Other"];
+// RelatedItem reuses these controlled lists (see DataCite Kernel 4.7, property 20)
+optionValues["relatedItemType"] = optionValues["resourceTypeGeneral"];
+optionValues["relatedItemIdentifierType"] = optionValues["relatedIdentifierType"];
 
 function process(section){
     var isWrapper = $(section).hasClass("wrapper-tag");
