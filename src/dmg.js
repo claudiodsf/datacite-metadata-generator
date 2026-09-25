@@ -214,7 +214,7 @@ function processTag(tag, indent){
     var tagValues = $(tag).children(".tag-value");
 
     if ($(tagValues).length){
-        value = inputValue(tagValues[0]);
+        value = textValue(tagValues[0]);
     }
 
     $(tag).children(".tag").each(function(){
@@ -257,8 +257,14 @@ function attribs(element){
     return attribs;
 }
 
+// values written between double quotes: only these four characters have to be escaped
 function inputValue(input){
     return $(input).val().encodeXML();
+}
+
+// element content: neither quote needs to be escaped
+function textValue(input){
+    return $(input).val().encodeXMLText();
 }
 
 function selectValue(select){
@@ -332,8 +338,14 @@ function st(element) {
   }
 }
 
+// attribute values, written as name="value"
 String.prototype.encodeXML = function() {
-  return this.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+  return this.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+};
+
+// text content, where " and ' are allowed as they are
+String.prototype.encodeXMLText = function() {
+  return this.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 };
 
 var metadata = "";
