@@ -217,3 +217,25 @@ a.button {
     text-shadow: #222 0 1px 1px;
     vertical-align: middle
 }
+div.toolbar {
+    padding: 6px 8px;
+    margin-bottom: 6px
+}
+div.toolbar button {
+    cursor: pointer
+}
+span.loadstatus {
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 8px;
+    vertical-align: middle
+}
+span.loadstatus.ok {
+    color: #176ca7
+}
+span.loadstatus.warn {
+    color: #8a5a00
+}
+span.loadstatus.error {
+    color: #b00020
+}

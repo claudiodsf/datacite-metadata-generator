@@ -12,6 +12,7 @@ How to use:
 - Download datacite-metadata-generator.html.
 - Open using a browser (Firefox/Chrome/Opera recommended, or IE8+).
 - Start creating metadata.
+- Use the 'Load XML file' button to fill the form from an existing DataCite XML file.
 - Use 'Select All' button to copy and paste results or 'Save as file' button to save results to a file.
 
 Uses:
@@ -24,6 +25,10 @@ Notes:
 ======
 - Currently the 'save to file' feature does not work in Safari.
 - The form does not perform any XML validation or validation against the DataCite schema.
+- A loaded XML file does not have to be valid against the DataCite schema: everything the
+  form understands is used to fill it, while unknown elements and attributes and values
+  that are not part of the controlled lists are ignored and reported. Only a file that is
+  not well-formed XML, or whose root element is not <resource>, is rejected.
 
 To Do:
 ======
